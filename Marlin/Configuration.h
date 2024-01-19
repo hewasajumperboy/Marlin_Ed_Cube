@@ -111,7 +111,6 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-// TODO: baud should be fine... lower if issues arise
 #define BAUDRATE 250000
 
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
@@ -160,8 +159,6 @@
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
 
-// TODO: verify driver type!!!
-// TODO: setup dual-z!  Then print 2 sets of guide rod mounts, install, and calibrate bed
 #define X_DRIVER_TYPE  TMC2209
 #define Y_DRIVER_TYPE  TMC2209
 #define Z_DRIVER_TYPE  TMC2209
@@ -541,7 +538,6 @@
  *
  */
 
-// TODO: configure temp sensors
 #define TEMP_SENSOR_0 1
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
@@ -1127,7 +1123,7 @@
 #define U_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define V_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define W_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-// TODO: figure out endstop inverting value
+
 /*
 *  The “ENDSTOPINVERTING” lines configure whether the triggered sensor sets a
 *  high or low signal. The rule of thumb here is that, if you have an NPN-type
@@ -1185,8 +1181,6 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-// TODO: figure out defaults here once you're in pronterface
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
 // Measured values: E99.7072 Z410.17 Y80 X80.86992
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.86992, 80, 410.17, 99.7072 }
 
@@ -1504,8 +1498,7 @@
  *     O-- FRONT --+
  */
 
-// TODO: measure nozzle to probe offsets!!!
-//#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+// TODO: MOUNT THE STUPID PROBE!!! measure nozzle to probe offsets!!!
 #define NOZZLE_TO_PROBE_OFFSET { 25, 8, 0 }
 
 // Most probes should stay away from the edges of the bed, but
@@ -1676,7 +1669,6 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-// TODO: E0 appears to be reversed
 #define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
@@ -1718,7 +1710,7 @@
 // @section geometry
 
 // The size of the printable area
-// TODO: manually measure these tunables
+// TODO: manually measure the maximum carriage travel distance
 #define X_BED_SIZE 380
 #define Y_BED_SIZE 380
 #define Z_MAX_POS 350
@@ -1897,7 +1889,6 @@
  *   With an LCD controller the process is guided step-by-step.
  */
 
-// TODO: figure out bed leveling algo (probably UBL or Bilinear)
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
@@ -2761,7 +2752,6 @@
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 
-// TODO: try this LCD and reinit EEPROM!
 //#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
@@ -3241,7 +3231,6 @@
 
 // Set number of user-controlled fans. Disable to use all board-defined fans.
 // :[1,2,3,4,5,6,7,8]
-// TODO: fans (extruder fan?)
 #define NUM_M106_FANS 1
 
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
@@ -3392,6 +3381,5 @@
 // Disable servo with M282 to reduce power consumption, noise, and heat when not in use
 //#define SERVO_DETACH_GCODE
 
-// Suppress a diag jumpers warning... not applicable until sensorless homing is enabled?
-// TODO: reinstall DIAG jumpers (since all stallguard pins aren't connected)
+// Suppress a diag jumpers warning... not applicable since we're taking input from the respective sensors
 #define DIAG_JUMPERS_REMOVED
