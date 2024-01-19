@@ -973,9 +973,6 @@
    * If not defined, probe limits will be used.
    * Override with 'M422 S<index> X<pos> Y<pos>'.
    */
-  //#define Z_STEPPER_ALIGN_XY { {  10, 190 }, { 100,  10 }, { 190, 190 } }
-  // TODO: verify these values... then change to middle probing once the bed has quad corner supports!
-  //#define Z_STEPPER_ALIGN_XY { {  50, 175 }, { 350,  175 } }
   #define Z_STEPPER_ALIGN_XY { { 350,  175 }, {  50, 175 } }
 
   /**
@@ -2711,7 +2708,6 @@
  *
  * @section tmc/config
  */
-// TODO: set stepper current (so extruder doesn't skip)
 #if HAS_TRINAMIC_CONFIG || HAS_TMC26X
 
   #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
@@ -3164,7 +3160,6 @@
    * Comment *_STALL_SENSITIVITY to disable sensorless homing for that axis.
    * @section tmc/stallguard
    */
-  // TODO: read the above blurb to setup sensorless homing
   //#define SENSORLESS_HOMING // StallGuard capable drivers only
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
@@ -3206,7 +3201,6 @@
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
 
-  // TODO: verify stepper driver support
   #define SQUARE_WAVE_STEPPING
 
   /**
