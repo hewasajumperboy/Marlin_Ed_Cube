@@ -1,0 +1,14 @@
+Z Steppers Auto-Alignment
+
+Description
+
+Align multiple Z stepper motors using a bed probe by probing one position per stepper. See M422 for Z-Stepper automatic alignment parameter selection.
+
+
+Example
+
+Align Z steppers:
+
+G34
+
+
