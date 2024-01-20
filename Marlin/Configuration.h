@@ -1499,6 +1499,7 @@
  */
 
 // TODO: MOUNT THE STUPID PROBE!!! measure nozzle to probe offsets!!!
+//#define NOZZLE_TO_PROBE_OFFSET { 27, 9, 0 } //from https://www.thingiverse.com/thing:2014874/comments
 #define NOZZLE_TO_PROBE_OFFSET { 25, 8, 0 }
 
 // Most probes should stay away from the edges of the bed, but
