@@ -1182,7 +1182,11 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 // Measured values: E99.7072 Z410.17 Y80 X80.86992
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.86992, 80, 410.17, 99.7072 }
+// TODO: return to calculated defaults (now we're not interpolating steps)
+// TODO: calculate E steps per mm??? (pi*d/200 where d=drive gear)
+// TODO: calculate Z steps per mm (looks awfully close to 8mm led @ 16 uSteps)
+//           - change z axis to 4 or 8 uSteps?! (100 or 200 steps/mm, respectively)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 200, 99.7072 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
