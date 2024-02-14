@@ -3604,3 +3604,9 @@
 
 // Disable servo with M282 to reduce power consumption, noise, and heat when not in use
 //#define SERVO_DETACH_GCODE
+
+// Remove warning about Sensorless homing disabled... blah blah blah
+#define DIAG_JUMPERS_REMOVED
+
+// Disable pin auto asign warning.  I know E1 is now Z2!
+#define NO_AUTO_ASSIGN_WARNING
