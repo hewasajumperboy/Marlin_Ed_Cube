@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Brandon Brocker, 20240204, config: Brandon's BTT_GTR_V1_0)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Brandon Brocker, 20240218, config: Brandon's BTT_GTR_V1_0)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1502,9 +1502,9 @@
  *     O-- FRONT --+
  */
 
-// TODO: MOUNT THE STUPID PROBE!!! measure nozzle to probe offsets!!!
+// TODO: Measure probe offsets after reprinting!!!
 //#define NOZZLE_TO_PROBE_OFFSET { 27, 9, 0 } //from https://www.thingiverse.com/thing:2014874/comments
-#define NOZZLE_TO_PROBE_OFFSET { 25, 8, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 25, 10.6, -2.4 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1715,9 +1715,9 @@
 // @section geometry
 
 // The size of the printable area
-// TODO: manually measure the maximum carriage travel distance
-#define X_BED_SIZE 380
-#define Y_BED_SIZE 380
+// TODO: manually measure the maximum Z-carriage travel distance AFTER reprinting Z-nut mounts
+#define X_BED_SIZE 400
+#define Y_BED_SIZE 365
 #define Z_MAX_POS 350
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
