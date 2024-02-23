@@ -116,7 +116,7 @@
 
   // Reduce baud rate to improve software serial reliability
   #ifndef TMC_BAUD_RATE
-    #define TMC_BAUD_RATE                  19200
+    #define TMC_BAUD_RATE                  115200
   #endif
 
 #endif // HAS_TMC_UART
