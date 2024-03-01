@@ -2156,14 +2156,13 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  // TODO: get measurements from Peter (and update build string)
-  #define XY_DIAG_AC 282.8427124746
-  #define XY_DIAG_BD 282.8427124746
-  #define XY_SIDE_AD 200
+  #define XY_DIAG_AC 100.26
+  #define XY_DIAG_BD 99.28
+  #define XY_SIDE_AD 70.56
 
   // Or, set the XY skew factor directly:
   //#define XY_SKEW_FACTOR 0.0
