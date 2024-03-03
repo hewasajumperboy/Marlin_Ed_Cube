@@ -60,8 +60,8 @@
 #define Y_DIAG_PIN                          PC13  // Y-
 #define Z_DIAG_PIN                          PE0   // Z-
 #define E0_DIAG_PIN                         PG14  // X+
-//#define E1_DIAG_PIN                         PG9   // Y+
-#define Z2_DIAG_PIN                         PG9   // Y+
+#define E1_DIAG_PIN                         PG9   // Y+
+//#define Z2_DIAG_PIN                         PG9   // Y+
 #define E2_DIAG_PIN                         PD3   // Z+
 
 //
@@ -88,8 +88,8 @@
   #endif
 #else
   #define Y_MIN_PIN                   Y_DIAG_PIN  // Y-
-  //#define Y_MAX_PIN                  E1_DIAG_PIN  // Y+
-  #define Y_MAX_PIN                  Z2_DIAG_PIN  // Y+
+  #define Y_MAX_PIN                  E1_DIAG_PIN  // Y+
+  //#define Y_MAX_PIN                  Z2_DIAG_PIN  // Y+
 #endif
 
 #ifdef Z_STALL_SENSITIVITY
@@ -150,20 +150,21 @@
   #define E0_CS_PIN                         PG10
 #endif
 
-/*
 #define E1_STEP_PIN                         PD6
 #define E1_DIR_PIN                          PD5
 #define E1_ENABLE_PIN                       PD7
 #ifndef E1_CS_PIN
   #define E1_CS_PIN                         PD4
 #endif
-*/
+
+/*
 #define Z2_STEP_PIN                         PD6
 #define Z2_DIR_PIN                          PD5
 #define Z2_ENABLE_PIN                       PD7
 #ifndef Z2_CS_PIN
   #define Z2_CS_PIN                         PD4
 #endif
+*/
 
 #define E2_STEP_PIN                         PD1
 #define E2_DIR_PIN                          PD0
@@ -260,10 +261,10 @@
   #define E0_SERIAL_TX_PIN                  PG10
   #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
 
-  //#define E1_SERIAL_TX_PIN                  PD4
-  //#define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
-  #define Z2_SERIAL_TX_PIN                  PD4
-  #define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
+  #define E1_SERIAL_TX_PIN                  PD4
+  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  //#define Z2_SERIAL_TX_PIN                  PD4
+  //#define Z2_SERIAL_RX_PIN      Z2_SERIAL_TX_PIN
 
   #define E2_SERIAL_TX_PIN                  PC12
   #define E2_SERIAL_RX_PIN      E2_SERIAL_TX_PIN

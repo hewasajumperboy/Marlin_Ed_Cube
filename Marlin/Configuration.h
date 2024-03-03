@@ -3387,3 +3387,6 @@
 
 // Suppress a diag jumpers warning... not applicable since we're taking input from the respective sensors
 #define DIAG_JUMPERS_REMOVED
+
+// Suppress pin auto assingnment warning (E1->Z2)
+#define NO_AUTO_ASSIGN_WARNING
