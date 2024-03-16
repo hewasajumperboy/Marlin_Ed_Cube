@@ -25,7 +25,7 @@ mount_height = 4;
 mount_length = lm12uu_length/2; // len/2 = center
 mount_hole_spacing = extrusion_width*1.5;
 mount_hole_diam = 4.3;
-mount_screwhead_clearance_diam = 8.25;
+mount_screwhead_clearance_diam = 7.25;
 
 corner_round_diam = 9;
 DEBUG = 0;
