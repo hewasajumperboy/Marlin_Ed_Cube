@@ -407,6 +407,8 @@ else ifeq ($(HARDWARE_MOTHERBOARD),1327)
 else ifeq ($(HARDWARE_MOTHERBOARD),1328)
 # Mega controller & Protoneer CNC Shield V3.00
 else ifeq ($(HARDWARE_MOTHERBOARD),1329)
+# HICTOP MPX.3
+else ifeq ($(HARDWARE_MOTHERBOARD),1165)
 
 #
 # ATmega1281, ATmega2561
