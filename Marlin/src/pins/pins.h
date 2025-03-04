@@ -274,6 +274,8 @@
   #include "ramps/pins_XTLW_MFF_V1.h"               // ATmega2560                           env:mega2560
 #elif MB(XTLW_MFF_V2)
   #include "ramps/pins_XTLW_MFF_V2.h"               // ATmega2560                           env:mega2560
+#elif MB(HICTOP_MPX3)
+  #include "ramps/pins_HICTOP_MPX3.h"               // ATmega2560, ATmega1280               env:mega2560 env:mega1280
 
 //
 // RAMBo and derivatives
