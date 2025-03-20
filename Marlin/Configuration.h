@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Brandon Brocker, 20250226, MPX.3" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Brandon Brocker, 20250319, MPX.3" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -1250,7 +1250,7 @@
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-//#define ENDSTOP_INTERRUPTS_FEATURE
+#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Threshold
@@ -2498,7 +2498,7 @@
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_3_LABEL       "PETG"
-#define PREHEAT_3_TEMP_HOTEND 205
+#define PREHEAT_3_TEMP_HOTEND 230
 #define PREHEAT_3_TEMP_BED     90
 #define PREHEAT_3_TEMP_CHAMBER  0
 #define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
@@ -2698,7 +2698,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: ENABLE CRC
