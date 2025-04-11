@@ -61,7 +61,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Brandon Brocker, 20250331, MPX.3" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Brandon Brocker, 20250410, MPX.3" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -1265,6 +1265,8 @@
   #if ENABLED(LIMITED_JERK_EDITING)
     #define MAX_JERK_EDIT_VALUES { 20, 20, 0.6, 10 } // ...or, set your own edit limits
   #endif
+  #else
+  #define DEFAULT_JERK  7.0 // Used by Junction Deviation when CLASSIC_JERK is disabled
 #endif
 
 #define DEFAULT_EJERK    5.0  // May be used by Linear Advance
@@ -1277,7 +1279,9 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  //#define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  // calculate programmaticly using equation from link above
+  #define JUNCTION_DEVIATION_MM 0.4 * ((DEFAULT_JERK * DEFAULT_JERK) / DEFAULT_ACCELERATION) // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
