@@ -2119,7 +2119,8 @@
   #if ENABLED(DISTINCT_E_FACTORS)
     #define ADVANCE_K { 0.22 }    // (mm) Compression length per 1mm/s extruder speed, per extruder
   #else
-    #define ADVANCE_K 0.17        // (mm) Compression length applying to all extruders
+    //#define ADVANCE_K 0.17        // (mm) Compression length applying to all extruders
+    #define ADVANCE_K 0.055        // BB 20250411 - printed https://ellis3dp.com/Pressure_Linear_Advance_Tool/
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with M900 L.
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
