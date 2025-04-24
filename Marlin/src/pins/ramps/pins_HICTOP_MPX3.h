@@ -58,6 +58,11 @@
 #undef SERVO0_PIN                   // Undefine SERVO0
 #define SERVO0_PIN      11
 
+// Y_MIN (Pin 14) appears to have died... reassign it to Y_MAX (Pin 15)
+#undef Y_MIN_PIN
+#undef Y_MAX_PIN
+#define Y_MIN_PIN                         15  // Labeled on board as Y+
+#define Y_MAX_PIN                         14  // Labeled on board as Y-
 
 // Unsure where the PS_ON pin is, but it isn't pin 12. Disable it for now
 #undef PS_ON_PIN
