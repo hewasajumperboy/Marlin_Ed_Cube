@@ -339,7 +339,7 @@
 
   #define LCD_PINS_EN                EXP1_03_PIN
   #define LCD_PINS_RS                EXP1_04_PIN
-  #define LCD_BACKLIGHT_PIN                 -1
+  //#define LCD_BACKLIGHT_PIN                 -1
 
   // MKS MINI12864 and MKS LCD12864B; If using MKS LCD12864A (Need to remove RPK2 resistor)
   #if ENABLED(MKS_MINI_12864)
@@ -355,9 +355,9 @@
 
   #elif ENABLED(FYSETC_MINI_12864_2_1)
     #define LCD_PINS_DC              EXP1_04_PIN
-    #define DOGLCD_CS                EXP1_03_PIN
+    //#define DOGLCD_CS                EXP1_03_PIN
     #define DOGLCD_A0                LCD_PINS_DC
-    #define LCD_BACKLIGHT_PIN               -1
+    #define LCD_BACKLIGHT_PIN        EXP1_03_PIN
     #define LCD_RESET_PIN            EXP1_05_PIN
     #define NEOPIXEL_PIN             EXP1_06_PIN
     #define DOGLCD_MOSI              EXP2_06_PIN
