@@ -710,9 +710,10 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    // 24v E3Dv6 all metal clone @240C
+    #define DEFAULT_Kp  26.2
+    #define DEFAULT_Ki  2.85
+    #define DEFAULT_Kd  60.3
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
