@@ -1036,7 +1036,7 @@
    * If not defined, probe limits will be used.
    * Override with 'M422 S<index> X<pos> Y<pos>'.
    */
-  //#define Z_STEPPER_ALIGN_XY { {  10, 190 }, { 100,  10 }, { 190, 190 } }
+  //#define Z_STEPPER_ALIGN_XY { {  60, Y_CENTER }, { 150,  Y_CENTER } }
 
   /**
    * Orientation for the automatically-calculated probe positions.
@@ -1058,7 +1058,7 @@
    *               | 1   2 | 2   3 | 3   4 | 4   1 |
    */
   #ifndef Z_STEPPER_ALIGN_XY
-    //#define Z_STEPPERS_ORIENTATION 0
+    #define Z_STEPPERS_ORIENTATION 0
   #endif
 
   /**
@@ -1111,7 +1111,8 @@
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define from 3 to 9 points to probe.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 190,  20 }, { 190, 250}, { 20, 250 } }
+  // NOTE: These values need to follow probing margin with respect to bed size
+  #define TRAMMING_POINT_XY { { 30, 30 }, { 180, 30 }, { 180, 240}, { 30, 240 } }
 
   // Define position names for probe points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
@@ -1122,7 +1123,7 @@
   #define RESTORE_LEVELING_AFTER_G35    // Enable to restore leveling setup after operation
   //#define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
 
-  //#define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu
+  #define ASSISTED_TRAMMING_WIZARD    // Add a Tramming Wizard to the LCD menu
 
   //#define ASSISTED_TRAMMING_WAIT_POSITION { X_CENTER, Y_CENTER, 30 } // Move the nozzle out of the way for adjustment
 

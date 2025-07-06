@@ -805,14 +805,18 @@
 #define PIDTEMPBED
 
 #if ENABLED(PIDTEMPBED)
-  #define MIN_BED_POWER 0   // Min power to improve PID stability (0..MAX_BED_POWER).
+  //#define MIN_BED_POWER 0   // Min power to improve PID stability (0..MAX_BED_POWER).
                               // Get the power from the temperature report ('M105' => B@:nnn) and try P*2-20 to P*2-10.
   #define PID_BED_DEBUG     // Print Bed PID debug data to the serial port. Use 'M303 D' to enable/disable.
 
   // 24V 200x270 HICTOP Bed behind an external mosfet @100C - 
-  #define DEFAULT_bedKp   180.7
-  #define DEFAULT_bedKi   34.22
-  #define DEFAULT_bedKd   636.1
+  //#define DEFAULT_bedKp   180.7
+  //#define DEFAULT_bedKi   34.22
+  //#define DEFAULT_bedKd   636.1
+  // old config: 24V, 95C, onboard mosfet:
+  #define DEFAULT_bedKp 209.2
+  #define DEFAULT_bedKi 34.98
+  #define DEFAULT_bedKd 834.0
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
@@ -1659,7 +1663,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -21.7, 1.5, -2.9 }
+#define NOZZLE_TO_PROBE_OFFSET { -21.7, 1.5, -2.81 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1669,7 +1673,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15
+#define PROBING_MARGIN 25
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
@@ -1744,13 +1748,13 @@
  * Example: 'M851 Z-5' with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: 'M851 Z+1' with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // (mm) Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE    5 // (mm) Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // (mm) Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
 //#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -4 // (mm) Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -8 // (mm) Farthest distance below the trigger-point to go before stopping
 
 // For M851 provide ranges for adjusting the X, Y, and Z probe offsets
 //#define PROBE_OFFSET_XMIN -50   // (mm)
@@ -2247,8 +2251,8 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET PROBING_MARGIN              // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 11      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
