@@ -687,9 +687,14 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // 24v E3Dv6 all metal clone @240C
-    #define DEFAULT_Kp  26.2
-    #define DEFAULT_Ki  2.85
-    #define DEFAULT_Kd  60.3
+    //#define DEFAULT_Kp  26.2
+    //#define DEFAULT_Ki  2.85
+    //#define DEFAULT_Kd  60.3
+    
+    // BB 20250711 - E3Dv6 clone all metal, 250C, 24V, 100% fan, onboard mosfet
+    #define DEFAULT_Kp 30.14
+    #define DEFAULT_Ki 3.92
+    #define DEFAULT_Kd 57.87
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -774,10 +779,15 @@
   //#define MIN_BED_POWER 0
   #define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
-  // old config: 24V, 95C, onboard mosfet:
-  #define DEFAULT_bedKp 209.2
-  #define DEFAULT_bedKi 34.98
-  #define DEFAULT_bedKd 834.0
+  // old old config: 24V, 95C, onboard mosfet:
+  //#define DEFAULT_bedKp 209.2
+  //#define DEFAULT_bedKi 34.98
+  //#define DEFAULT_bedKd 834.0
+
+  // BB 20250711 - 24V, External Mosfet, 100C
+  #define DEFAULT_bedKp 34.22
+  #define DEFAULT_bedKi 1.54
+  #define DEFAULT_bedKd 507.33
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
