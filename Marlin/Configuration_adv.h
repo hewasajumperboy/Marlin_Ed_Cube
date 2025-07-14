@@ -1274,7 +1274,7 @@
  * vibration and surface artifacts. The algorithm adapts to provide the best possible step smoothing at the
  * lowest stepping frequencies.
  */
-//#define ADAPTIVE_STEP_SMOOTHING
+#define ADAPTIVE_STEP_SMOOTHING
 
 /**
  * Custom Microstepping
@@ -2724,7 +2724,7 @@
 #if HAS_TRINAMIC_CONFIG || HAS_TMC26X
 
   #define TMC_STEPPER_CURRENT 1273  // All steppers are identical, 17HE19-2004S (2A Peak, 90% of max)
-  #define HOLD_MULTIPLIER    0.6  // Scales down the holding current from run current
+  #define HOLD_MULTIPLIER    0.66  // Scales down the holding current from run current
 
   /**
    * Interpolate microsteps to 256
